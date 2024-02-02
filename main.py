@@ -1,14 +1,13 @@
-from PySide6 import QtCore, QtGui, QtWidgets
+from PySide6.QtWidgets import QApplication
 from gui import MainWindow
 import sys
 
 
 def main():
-    app = QtWidgets.QApplication([])
+    app = QApplication(sys.argv)
 
-    widget = MainWindow()
-    widget.resize(800, 600)
-    widget.show()
+    window = MainWindow()
+    window.show()
 
     sys.exit(app.exec())
 
