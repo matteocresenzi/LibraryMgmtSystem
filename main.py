@@ -5,9 +5,15 @@ import sys
 
 
 def main():
+
+    # Create database bookDb
     db = Database("bookDb")
     db.create_connection()
+    # Checks if DB is valid
     db.check_database()
+    # Closes DB Connection
+    # db.close_connection()
+
     app = QApplication(sys.argv)
 
     window = MainWindow()

@@ -28,3 +28,13 @@ class Database:
         except sqlite3.OperationalError as err:
             print('Database does not exist')
             print(err)
+
+    def close_connection(self):
+        # Closes connection to the database
+        try:
+            print(f'Closing {self.db_name} database in memory')
+            if (self.conn is not None):
+                self.conn.close()
+        except sqlite3.OperationalError as err:
+            print('Error closing database')
+            print(err)
