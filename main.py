@@ -6,7 +6,6 @@ import sys
 app = QApplication(sys.argv)
 window = MainWindow()
 
-
 def print_values():
     print(f'\n{window.ui.lineEdit.text()}')
     print(window.ui.lineEdit_2.text())
@@ -14,10 +13,8 @@ def print_values():
     print(window.ui.comboBox.currentText())
     print(window.ui.spinBox.text())
 
-
 def main_insert():
     insert_entry(window.get_entry())
-
 
 def main():
     run_db_commands()
@@ -28,7 +25,6 @@ def main():
     window.ui.pushButton.clicked.connect(main_insert)
     window.ui.pushButton_2.clicked.connect(print_table)
     sys.exit(app.exec())
-
 
 if __name__ == '__main__':
     main()
