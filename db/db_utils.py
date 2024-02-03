@@ -4,7 +4,7 @@ from db.database import Database
 db = Database("bookDb")
 
 sql_books_table = """ CREATE TABLE IF NOT EXISTS books (
-                        id integer PRIMARY KEY,
+                        id INTEGER PRIMARY KEY,
                         title text NOT NULL,
                         author text NOT NULL,
                         publication_year text NOT NULL,
@@ -12,7 +12,7 @@ sql_books_table = """ CREATE TABLE IF NOT EXISTS books (
                         personal_rating integer NOT NULL
                   ); """
 insert_form_entry = """ INSERT INTO books (id, title, author, publication_year, genre, personal_rating)
-                        VALUES (?, ?, ?, ?, ?, ?);
+                        VALUES (NULL, ?, ?, ?, ?, ?);
                     """
 sql_select_all = """ SELECT * FROM books; """
 
