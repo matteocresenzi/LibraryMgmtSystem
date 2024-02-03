@@ -17,7 +17,7 @@ class Database:
             print(e)
         finally:
             if self.conn:
-                self.conn.close()
+                self.conn.commit()
 
     def check_database(self):
         # Check if database is active
@@ -33,8 +33,15 @@ class Database:
         # Closes connection to the database
         try:
             print(f'Closing {self.db_name} database in memory')
-            if (self.conn is not None):
+            if self.conn is not None:
                 self.conn.close()
         except sqlite3.OperationalError as err:
             print('Error closing database')
             print(err)
+
+    def create_table(self, table_name):
+        try:
+            c = self.conn.cursor()
+            c.execute(table_name)
+        except Error as error:
+            print(error)

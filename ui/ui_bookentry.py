@@ -64,6 +64,10 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(230, 290, 250, 30))
         self.pushButton.setAutoFillBackground(False)
+        self.pushButton_2 = QPushButton(self.centralwidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(230, 330, 250, 30))
+        self.pushButton_2.setAutoFillBackground(False)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -89,5 +93,6 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Genre", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Personal Rating", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Submit", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Print Entry", None))
     # retranslateUi
 

@@ -8,3 +8,12 @@ class MainWindow(QMainWindow):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+    def get_entry(self):
+        entry_items = (1,
+                       self.ui.lineEdit.text(),
+                       self.ui.lineEdit_2.text(),
+                       self.ui.lineEdit_3.text(),
+                       self.ui.comboBox.currentText(),
+                       int(self.ui.spinBox.text()))
+        return entry_items
