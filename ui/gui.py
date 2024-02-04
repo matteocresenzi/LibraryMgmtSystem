@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QMainWindow
 from ui.ui_add_book import Ui_MainWindow
+from db.db_utils import insert_entry
 
 
 class AddBookWindow(QMainWindow):
@@ -23,6 +24,9 @@ class AddBookWindow(QMainWindow):
                        self.ui.genreBox.currentText(),
                        int(self.ui.ratingSlider.value()))
         return entry_items
+
+    def insert_book(self):
+        insert_entry(self.get_entry())
 
     # Empties out text fields
     def clear_text(self):
