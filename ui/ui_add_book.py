@@ -134,6 +134,13 @@ class Ui_MainWindow(object):
         font.setPointSize(24)
         self.label_8.setFont(font)
         self.label_8.setScaledContents(False)
+        self.responseLabel = QLabel(self.centralwidget)
+        self.responseLabel.setObjectName(u"responseLabel")
+        self.responseLabel.setGeometry(QRect(200, 520, 400, 21))
+        font1 = QFont()
+        font1.setPointSize(20)
+        self.responseLabel.setFont(font1)
+        self.responseLabel.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -170,5 +177,6 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"5", None))
         self.submitButton.setText(QCoreApplication.translate("MainWindow", u"Submit", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Add a Book", None))
+        self.responseLabel.setText("")
     # retranslateUi
 

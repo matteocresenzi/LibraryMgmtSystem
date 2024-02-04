@@ -12,6 +12,11 @@ class AddBookWindow(QMainWindow):
 
     # Gets and returns current values input from user
     def get_entry(self):
+        if self.ui.titleEdit.text() != '' and self.ui.authorEdit.text() != '' and self.ui.yearEdit.text() != '':
+            self.ui.responseLabel.setText("Book added successfully!")
+        else:
+            self.ui.responseLabel.setText("Missing required field.")
+
         entry_items = (self.ui.titleEdit.text(),
                        self.ui.authorEdit.text(),
                        self.ui.yearEdit.text(),
