@@ -31,10 +31,10 @@
    <widget class="QPushButton" name="homeButton">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>5</y>
-      <width>100</width>
-      <height>30</height>
+      <x>145</x>
+      <y>0</y>
+      <width>120</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -47,10 +47,10 @@
    <widget class="QPushButton" name="addButton">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>5</y>
-      <width>100</width>
-      <height>30</height>
+      <x>275</x>
+      <y>0</y>
+      <width>120</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -63,10 +63,10 @@
    <widget class="QPushButton" name="editButton">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>5</y>
-      <width>100</width>
-      <height>30</height>
+      <x>405</x>
+      <y>0</y>
+      <width>120</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -76,29 +76,13 @@
      <string>Edit Book</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="loanButton">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>5</y>
-      <width>100</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="text">
-     <string>Loans</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="visualizeButton">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>5</y>
-      <width>100</width>
-      <height>30</height>
+      <x>535</x>
+      <y>0</y>
+      <width>120</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="layoutDirection">

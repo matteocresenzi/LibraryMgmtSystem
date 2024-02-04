@@ -43,6 +43,13 @@ def set_back_index():
     last_page_array[0] = cur_page
 
 def page_function():
+    # Hooks up buttons for Home page
+    home_widget.ui.addButton.clicked.connect(lambda: set_back_index())
+    home_widget.ui.addButton.clicked.connect(lambda: window.stacked_widget.setCurrentIndex(1))
+    home_widget.ui.editButton.clicked.connect(lambda: set_back_index())
+    home_widget.ui.editButton.clicked.connect(lambda: window.stacked_widget.setCurrentIndex(2))
+    home_widget.ui.exitButton.clicked.connect(lambda: sys.exit())
+
     # Hooks up buttons for Add Book page
     add_widget.ui.submitButton.clicked.connect(lambda: insert_entry(get_entry()))
     add_widget.ui.submitButton.clicked.connect(lambda: clear_text())

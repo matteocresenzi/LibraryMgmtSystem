@@ -42,7 +42,7 @@ class Ui_Form(object):
         self.label_7.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
         self.responseLabel = QLabel(Form)
         self.responseLabel.setObjectName(u"responseLabel")
-        self.responseLabel.setGeometry(QRect(200, 500, 400, 16))
+        self.responseLabel.setGeometry(QRect(200, 500, 400, 20))
         font1 = QFont()
         font1.setPointSize(20)
         self.responseLabel.setFont(font1)

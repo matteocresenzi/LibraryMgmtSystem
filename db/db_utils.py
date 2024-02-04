@@ -42,7 +42,15 @@ def print_table():
 
     db.conn.commit()
 
+# Selects all items in books DB
+def select_all():
+    cursor = db.conn.cursor()
+    cursor.execute(sql_select_all)
+    data = cursor.fetchall()
 
+    db.conn.commit()
+
+# Closes DB connection
 def close_db_connection():
     # Closes DB Connection
     db.close_connection()
