@@ -4,7 +4,6 @@ from ui.ui_compiled.add_book import Ui_Form as AddWidget
 from ui.ui_compiled.edit_book import Ui_Form as EditWidget
 from ui.ui_compiled.menu_bar import Ui_Form as MenuWidget
 from ui.ui_compiled.visualize import Ui_Form as VisualizeWidget
-from db.db_utils import insert_entry
 
 class CustomWidget(QWidget, HomeWidget, AddWidget, EditWidget, MenuWidget, VisualizeWidget):
     def __init__(self, ui_class):
