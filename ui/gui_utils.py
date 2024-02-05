@@ -1,5 +1,5 @@
-from db.db_utils import insert_entry, print_table
-from PySide6.QtWidgets import QApplication
+from db.db_utils import insert_entry, print_table, select_table
+from PySide6.QtWidgets import QApplication, QTableWidgetItem
 from ui.gui import MainWindow
 import sys
 
@@ -42,6 +42,19 @@ def set_back_index():
     cur_page = window.stacked_widget.currentIndex()
     last_page_array[0] = cur_page
 
+# Populates table on home page
+def table_populate():
+    home_widget.ui.tableWidget.setRowCount(0)
+
+    data = select_table()
+
+    # Enumeration still doesn't make sense
+    for row, rowData in enumerate(data):
+        home_widget.ui.tableWidget.insertRow(row)
+        for col, value in enumerate(rowData):
+            item = QTableWidgetItem(value)
+            home_widget.ui.tableWidget.setItem(row, col, item)
+
 def page_function():
     # Hooks up buttons for Home page
     home_widget.ui.addButton.clicked.connect(lambda: set_back_index())
@@ -62,6 +75,7 @@ def menu_navigation():
     # Navigates to home page and stores index in back array
     window.menu_widget.ui.homeButton.clicked.connect(lambda: set_back_index())
     window.menu_widget.ui.homeButton.clicked.connect(lambda: window.stacked_widget.setCurrentIndex(0))
+    window.menu_widget.ui.homeButton.clicked.connect(lambda: table_populate())
 
     # Navigates to add book page and sets focus on first line edit and stores index in back array
     window.menu_widget.ui.addButton.clicked.connect(lambda: set_back_index())

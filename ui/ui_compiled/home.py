@@ -24,8 +24,8 @@ class Ui_Form(object):
             Form.setObjectName(u"Form")
         Form.resize(800, 560)
         self.tableWidget = QTableWidget(Form)
-        if (self.tableWidget.columnCount() < 5):
-            self.tableWidget.setColumnCount(5)
+        if (self.tableWidget.columnCount() < 4):
+            self.tableWidget.setColumnCount(4)
         font = QFont()
         font.setBold(True)
         __qtablewidgetitem = QTableWidgetItem()
@@ -40,9 +40,6 @@ class Ui_Form(object):
         __qtablewidgetitem3 = QTableWidgetItem()
         __qtablewidgetitem3.setFont(font);
         self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font);
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(20, 80, 550, 460))
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
@@ -51,7 +48,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy)
         self.tableWidget.horizontalHeader().setMinimumSectionSize(19)
-        self.tableWidget.horizontalHeader().setDefaultSectionSize(110)
+        self.tableWidget.horizontalHeader().setDefaultSectionSize(138)
         self.addButton = QPushButton(Form)
         self.addButton.setObjectName(u"addButton")
         self.addButton.setGeometry(QRect(585, 80, 200, 40))
@@ -92,15 +89,13 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("Form", u"Book #", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Form", u"Title", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("Form", u"Title", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Form", u"Author", None));
         ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("Form", u"Year", None));
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("Form", u"Author", None));
-        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("Form", u"Genre", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("Form", u"Genre", None));
         self.addButton.setText(QCoreApplication.translate("Form", u"Add", None))
         self.editButton.setText(QCoreApplication.translate("Form", u"Edit", None))
         self.editButton_2.setText(QCoreApplication.translate("Form", u"Delete", None))

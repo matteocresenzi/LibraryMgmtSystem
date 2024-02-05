@@ -15,7 +15,8 @@ insert_form_entry = """ INSERT INTO books (id, title, author, publication_year, 
                         VALUES (NULL, ?, ?, ?, ?, ?);
                     """
 sql_select_all = """ SELECT * FROM books; """
-
+sql_select_table = """ SELECT title, author, publication_year, genre
+                       FROM books; """
 
 def run_db_commands():
     db.create_connection()
@@ -43,13 +44,14 @@ def print_table():
     db.conn.commit()
 
 # Selects all items in books DB
-def select_all():
+def select_table():
     cursor = db.conn.cursor()
-    cursor.execute(sql_select_all)
+    cursor.execute(sql_select_table)
     data = cursor.fetchall()
 
     db.conn.commit()
 
+    return data
 # Closes DB connection
 def close_db_connection():
     # Closes DB Connection
