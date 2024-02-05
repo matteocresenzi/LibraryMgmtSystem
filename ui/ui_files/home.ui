@@ -128,9 +128,15 @@
     <rect>
      <x>175</x>
      <y>20</y>
-     <width>250</width>
+     <width>350</width>
      <height>55</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>350</width>
+     <height>0</height>
+    </size>
    </property>
    <property name="font">
     <font>

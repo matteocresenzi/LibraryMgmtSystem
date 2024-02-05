@@ -1,5 +1,5 @@
 from db.db_utils import insert_entry, print_table, select_table, delete_item
-from PySide6.QtWidgets import QApplication, QTableWidgetItem
+from PySide6.QtWidgets import QApplication, QTableWidgetItem, QSizePolicy
 from ui.gui import MainWindow
 import sys
 
@@ -61,7 +61,7 @@ def delete_entry():
         delete_item(selected_row)
         home_widget.ui.responseLabel.setText(f'Book {selected_row} deleted!')
     else:
-        home_widget.ui.responseLabel.setText('Nothing to Delete.')
+        home_widget.ui.responseLabel.setText('Nothing to Delete')
     home_widget.ui.tableWidget.removeRow(selected_row - 1)
 
 # Populates table on home page
