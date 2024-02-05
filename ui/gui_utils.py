@@ -40,6 +40,7 @@ def clear_text():
 def main_window_start():
     window.show()
 
+# Used for back buttons
 def set_back_index():
     cur_page = window.stacked_widget.currentIndex()
     last_page_array[0] = cur_page
@@ -54,6 +55,7 @@ def selected_items():
         selected_row = home_widget.ui.tableWidget.currentRow() + 1
     return selected_row
 
+# Deletes entry from database
 def delete_entry():
     if selected_row != 0:
         delete_item(selected_row)

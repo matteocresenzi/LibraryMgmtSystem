@@ -1,4 +1,2 @@
 #This is a dependency file for packages
 pyside6
-pyqt6-tools
-numpy
