@@ -1,4 +1,4 @@
-from db.db_utils import insert_entry, print_table, select_table
+from db.db_utils import insert_entry, print_table, select_table, delete_item
 from PySide6.QtWidgets import QApplication, QTableWidgetItem
 from ui.gui import MainWindow
 import sys
@@ -14,6 +14,8 @@ visualize_widget = window.stacked_widget.widget(3)
 
 # Array for helping back button functionality
 last_page_array = [0]
+# Selected row default to 0
+selected_row = 0
 
 # Gets and returns current values input from user
 def get_entry():
@@ -42,6 +44,21 @@ def set_back_index():
     cur_page = window.stacked_widget.currentIndex()
     last_page_array[0] = cur_page
 
+# If a cell is clicked index changes, otherwise 0
+def selected_items():
+    global selected_row
+
+    if not home_widget.ui.tableWidget.selectedItems():
+        selected_row = 0
+    else:
+        selected_row = home_widget.ui.tableWidget.currentRow() + 1
+    return selected_row
+
+def delete_entry():
+    if selected_row != 0:
+        delete_item(selected_row)
+    home_widget.ui.tableWidget.removeRow(selected_row - 1)
+
 # Populates table on home page
 def table_populate():
     home_widget.ui.tableWidget.setRowCount(0)
@@ -61,7 +78,9 @@ def page_function():
     home_widget.ui.addButton.clicked.connect(lambda: window.stacked_widget.setCurrentIndex(1))
     home_widget.ui.editButton.clicked.connect(lambda: set_back_index())
     home_widget.ui.editButton.clicked.connect(lambda: window.stacked_widget.setCurrentIndex(2))
+    home_widget.ui.deleteButton.clicked.connect(lambda: delete_entry())
     home_widget.ui.exitButton.clicked.connect(lambda: sys.exit())
+    home_widget.ui.tableWidget.itemSelectionChanged.connect(lambda: selected_items())
 
     # Hooks up buttons for Add Book page
     add_widget.ui.submitButton.clicked.connect(lambda: insert_entry(get_entry()))
@@ -69,6 +88,7 @@ def page_function():
     add_widget.ui.submitButton.clicked.connect(add_widget.ui.titleEdit.setFocus)
     add_widget.ui.printButton.clicked.connect(lambda: print_table())
     add_widget.ui.backButton.clicked.connect(lambda: window.stacked_widget.setCurrentIndex(last_page_array[0]))
+    add_widget.ui.backButton.clicked.connect(lambda: table_populate())
 
 # Makes menu navigation through buttons work
 def menu_navigation():

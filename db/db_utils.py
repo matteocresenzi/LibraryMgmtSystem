@@ -17,6 +17,8 @@ insert_form_entry = """ INSERT INTO books (id, title, author, publication_year, 
 sql_select_all = """ SELECT * FROM books; """
 sql_select_table = """ SELECT title, author, publication_year, genre
                        FROM books; """
+sql_delete_entry = """ DELETE FROM books WHERE id=?; """
+sql_update_ids = """ UPDATE books SET id = id - 1 WHERE id > ?; """
 
 def run_db_commands():
     db.create_connection()
@@ -25,13 +27,22 @@ def run_db_commands():
     # Create books table in DB
     db.create_table(sql_books_table)
 
-
 def insert_entry(entry_items):
     cursor = db.conn.cursor()
     cursor.execute(insert_form_entry, entry_items)
+
     print('Entries inserted into table.')
+
     db.conn.commit()
 
+# Deletes specified ID and shifts IDs downwards to compensate
+def delete_item(id_number):
+    cursor = db.conn.cursor()
+    cursor.execute(sql_delete_entry, (id_number,))
+    cursor.execute(sql_update_ids, (id_number,))
+    print(f'Book {id_number} deleted. IDs shifted downwards.')
+
+    db.conn.commit()
 
 def print_table():
     cursor = db.conn.cursor()
@@ -52,6 +63,7 @@ def select_table():
     db.conn.commit()
 
     return data
+
 # Closes DB connection
 def close_db_connection():
     # Closes DB Connection

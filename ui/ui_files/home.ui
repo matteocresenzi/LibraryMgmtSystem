@@ -107,7 +107,7 @@
     <string>Edit</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="editButton_2">
+  <widget class="QPushButton" name="deleteButton">
    <property name="geometry">
     <rect>
      <x>585</x>
