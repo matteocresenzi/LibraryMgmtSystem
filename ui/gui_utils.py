@@ -57,6 +57,9 @@ def selected_items():
 def delete_entry():
     if selected_row != 0:
         delete_item(selected_row)
+        home_widget.ui.responseLabel.setText(f'Book {selected_row} deleted!')
+    else:
+        home_widget.ui.responseLabel.setText('Nothing to Delete.')
     home_widget.ui.tableWidget.removeRow(selected_row - 1)
 
 # Populates table on home page
